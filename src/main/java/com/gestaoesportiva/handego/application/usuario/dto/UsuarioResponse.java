@@ -1,6 +1,6 @@
-package com.gestaoesportiva.handego.application.dto;
+package com.gestaoesportiva.handego.application.usuario.dto;
 
-import com.gestaoesportiva.handego.domain.entity.Usuario;
+import com.gestaoesportiva.handego.application.usuario.entity.Usuario;
 import com.gestaoesportiva.handego.domain.enumeration.Role;
 
 public record UsuarioResponse(

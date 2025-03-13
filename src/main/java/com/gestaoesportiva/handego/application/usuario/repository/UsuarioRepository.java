@@ -1,6 +1,6 @@
-package com.gestaoesportiva.handego.domain.repository;
+package com.gestaoesportiva.handego.application.usuario.repository;
 
-import com.gestaoesportiva.handego.domain.entity.Usuario;
+import com.gestaoesportiva.handego.application.usuario.entity.Usuario;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

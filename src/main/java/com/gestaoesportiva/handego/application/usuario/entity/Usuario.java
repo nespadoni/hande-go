@@ -1,22 +1,19 @@
-package com.gestaoesportiva.handego.domain.entity;
+package com.gestaoesportiva.handego.application.usuario.entity;
 
-import com.gestaoesportiva.handego.application.dto.UsuarioRequest;
-import com.gestaoesportiva.handego.application.dto.UsuarioResponse;
-import com.gestaoesportiva.handego.application.dto.UsuarioUpdate;
+import com.gestaoesportiva.handego.application.usuario.dto.UsuarioRequest;
+import com.gestaoesportiva.handego.application.usuario.dto.UsuarioUpdate;
 import com.gestaoesportiva.handego.domain.enumeration.Role;
+import com.gestaoesportiva.handego.domain.model.EntidadeBase;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
-import org.springframework.data.domain.Page;
 
-import java.util.UUID;
-
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "usuario")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Usuario {
+public class Usuario extends EntidadeBase {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -48,15 +45,11 @@ public class Usuario {
 
 
     public void atualizar(UsuarioUpdate dados) {
-        if (dados.id() != null) this.id = dados.id();
-        if (dados.nome() != null) this.nome = dados.nome();
-        if (dados.email() != null) this.email = dados.email();
-        if (dados.senha() != null) this.senha = dados.senha();
-        if (dados.telefone() != null) this.telefone = dados.telefone();
+        atualizarBase(dados);
+        if (dados.cidade() != null) this.cidade = dados.cidade();
         if (dados.role() != null) this.role = dados.role();
         if (dados.cpf() != null) this.cpf = dados.cpf();
-        if (dados.cidade() != null) this.cidade = dados.cidade();
-        if (dados.estado() != null) this.estado = dados.estado();
+
     }
 
 }

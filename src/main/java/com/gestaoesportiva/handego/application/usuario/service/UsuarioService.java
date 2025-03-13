@@ -1,10 +1,10 @@
-package com.gestaoesportiva.handego.domain.service;
+package com.gestaoesportiva.handego.application.usuario.service;
 
-import com.gestaoesportiva.handego.application.dto.UsuarioRequest;
-import com.gestaoesportiva.handego.application.dto.UsuarioResponse;
-import com.gestaoesportiva.handego.application.dto.UsuarioUpdate;
-import com.gestaoesportiva.handego.domain.entity.Usuario;
-import com.gestaoesportiva.handego.domain.repository.UsuarioRepository;
+import com.gestaoesportiva.handego.application.usuario.dto.UsuarioRequest;
+import com.gestaoesportiva.handego.application.usuario.dto.UsuarioResponse;
+import com.gestaoesportiva.handego.application.usuario.dto.UsuarioUpdate;
+import com.gestaoesportiva.handego.application.usuario.entity.Usuario;
+import com.gestaoesportiva.handego.application.usuario.repository.UsuarioRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;

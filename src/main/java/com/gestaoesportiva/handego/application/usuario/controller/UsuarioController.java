@@ -1,10 +1,9 @@
-package com.gestaoesportiva.handego.application.controller;
+package com.gestaoesportiva.handego.application.usuario.controller;
 
-import com.gestaoesportiva.handego.application.dto.UsuarioRequest;
-import com.gestaoesportiva.handego.application.dto.UsuarioResponse;
-import com.gestaoesportiva.handego.application.dto.UsuarioUpdate;
-import com.gestaoesportiva.handego.domain.repository.UsuarioRepository;
-import com.gestaoesportiva.handego.domain.service.UsuarioService;
+import com.gestaoesportiva.handego.application.usuario.dto.UsuarioRequest;
+import com.gestaoesportiva.handego.application.usuario.dto.UsuarioResponse;
+import com.gestaoesportiva.handego.application.usuario.dto.UsuarioUpdate;
+import com.gestaoesportiva.handego.application.usuario.service.UsuarioService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
