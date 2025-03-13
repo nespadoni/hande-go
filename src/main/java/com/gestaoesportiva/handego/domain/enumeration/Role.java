@@ -4,7 +4,8 @@ public enum Role {
     ADMIN,
     FEDERACAO,
     ARBITRO,
+    MESARIO,
     CLUBE,
+    TREINADOR,
     ATLETA,
-    TREINADOR
 }
