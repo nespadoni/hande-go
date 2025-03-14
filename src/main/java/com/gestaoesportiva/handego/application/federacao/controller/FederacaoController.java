@@ -21,7 +21,7 @@ public class FederacaoController {
     @PostMapping
     public ResponseEntity<?> create(@RequestBody FederacaoRequest dados) {
         Federacao federacao = federacaoService.create(dados);
-        return ResponseEntity.ok().body("O usuario "+ dados.nome() + " foi criado com sucesso");
+        return ResponseEntity.ok().body("A "+ dados.nome() + " foi criado com sucesso");
     }
 
     @GetMapping
@@ -38,20 +38,20 @@ public class FederacaoController {
     public ResponseEntity<?> update(@PathVariable Long id, @RequestBody FederacaoUpdate dados) {
         Federacao federacao = federacaoService.getById(id);
         federacaoService.update(id, dados);
-        return ResponseEntity.ok().body("O usuario "+ federacao.getNome() + " foi atualizado com sucesso");
+        return ResponseEntity.ok().body("A "+ federacao.getNome() + " foi atualizado com sucesso");
     }
 
     @PutMapping("/{id}/inativar")
     public ResponseEntity<?> inative(@PathVariable Long id) {
         Federacao federacao = federacaoService.getById(id);
         federacaoService.inative(id);
-        return ResponseEntity.ok().body("O usuario "+ federacao.getNome() + " foi inativado com sucesso");
+        return ResponseEntity.ok().body("A "+ federacao.getNome() + " foi inativado com sucesso");
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable Long id) {
         Federacao federacao = federacaoService.getById(id);
         federacaoService.delete(id);
-        return ResponseEntity.ok().body("O usuario "+ federacao.getNome() + " foi deletado com sucesso");
+        return ResponseEntity.ok().body("A "+ federacao.getNome() + " foi deletado com sucesso");
     }
 }
