@@ -1,11 +1,10 @@
 package com.gestaoesportiva.handego.application.federacao.service;
 
 import com.gestaoesportiva.handego.application.federacao.dto.FederacaoRequest;
+import com.gestaoesportiva.handego.application.federacao.dto.FederacaoResponse;
 import com.gestaoesportiva.handego.application.federacao.dto.FederacaoUpdate;
 import com.gestaoesportiva.handego.application.federacao.entity.Federacao;
 import com.gestaoesportiva.handego.application.federacao.repository.FederacaoRepository;
-import com.gestaoesportiva.handego.application.usuario.entity.Usuario;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -25,8 +24,9 @@ public class FederacaoService {
         return federacao;
     }
 
-    public Page<Federacao> getAll(Pageable paginacao) {
-        return federacaoRepository.findAll(paginacao);
+    public Page<FederacaoResponse> getAll(Pageable paginacao) {
+        Page<Federacao> federacoes = federacaoRepository.findAll(paginacao);
+        return federacoes.map(FederacaoResponse::new);
     }
 
     public Federacao getById(Long id) {
