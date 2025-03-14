@@ -16,6 +16,6 @@ public record UsuarioResponse(
 ) {
 
     public UsuarioResponse(Usuario usuario) {
-        this(usuario.getId(), usuario.getNome(), usuario.getEmail(), usuario.getTelefone(), usuario.getRole(), usuario.getCpf(), usuario.getCidade(), usuario.getEstado(), usuario.isAtivo());
+        this(usuario.getId(), usuario.getNome(), usuario.getEmail(), usuario.getTelefone(), usuario.getRole(), usuario.getCpf(), usuario.getCidade(), usuario.getEstado(), usuario.getAtivo());
     }
 }
