@@ -2,12 +2,16 @@ package com.gestaoesportiva.handego.domain.model;
 
 import com.gestaoesportiva.handego.application.campeonato.entity.Campeonato;
 import com.gestaoesportiva.handego.application.federacao.entity.Federacao;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
+import lombok.Data;
 
+@Data
+@Entity
+@Table(name = "regras")
 public class Regra {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String descricao;
 
