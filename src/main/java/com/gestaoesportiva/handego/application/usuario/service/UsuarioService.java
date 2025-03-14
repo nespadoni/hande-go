@@ -20,8 +20,6 @@ public class UsuarioService {
 
     public Usuario create(UsuarioRequest dados) {
         Usuario usuario = new Usuario(dados);
-        usuario.setAtivo(true);
-
         usuarioRepository.save(usuario);
         return usuario;
     }
