@@ -29,6 +29,9 @@ public class Federacao {
     private String cnpj;
     private String estado;
 
+    @OneToMany(mappedBy = "federacao", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Regra> regras = new ArrayList<>();
+
     private Boolean ativo;
 
     public Federacao(FederacaoRequest dados) {
