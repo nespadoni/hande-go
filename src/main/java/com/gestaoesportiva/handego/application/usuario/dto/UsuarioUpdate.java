@@ -1,6 +1,6 @@
 package com.gestaoesportiva.handego.application.usuario.dto;
 
-import com.gestaoesportiva.handego.domain.enumeration.Role;
+import com.gestaoesportiva.handego.domain.enums.Role;
 
 public record UsuarioUpdate(
         Long id,
