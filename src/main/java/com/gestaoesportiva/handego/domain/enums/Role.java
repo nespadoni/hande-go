@@ -1,4 +1,4 @@
-package com.gestaoesportiva.handego.domain.enumeration;
+package com.gestaoesportiva.handego.domain.enums;
 
 public enum Role {
     ADMIN,
