@@ -9,6 +9,5 @@ public record CampeonatoRequest(
         String cidade,
         String estado,
         Long federacaoId
-
 ) {
 }

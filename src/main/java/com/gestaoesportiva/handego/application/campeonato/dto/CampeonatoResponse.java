@@ -1,6 +1,7 @@
 package com.gestaoesportiva.handego.application.campeonato.dto;
 
 import com.gestaoesportiva.handego.application.campeonato.entity.Campeonato;
+import com.gestaoesportiva.handego.application.federacao.dto.FederacaoResponse;
 import com.gestaoesportiva.handego.application.federacao.entity.Federacao;
 
 public record CampeonatoResponse(
@@ -12,7 +13,7 @@ public record CampeonatoResponse(
         String local,
         String cidade,
         String estado,
-        Federacao federacao,
+        FederacaoResponse federacao,
         boolean ativo
 ) {
 
@@ -26,8 +27,8 @@ public record CampeonatoResponse(
                 campeonato.getLocal(),
                 campeonato.getCidade(),
                 campeonato.getEstado(),
-                campeonato.getFederacao(),
-                campeonato.isAtivo()
+                campeonato.getFederacao() != null ? new FederacaoResponse(campeonato.getFederacao()) : null,
+                campeonato.getAtivo()
         );
     }
 }

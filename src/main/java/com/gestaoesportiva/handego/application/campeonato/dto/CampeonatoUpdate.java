@@ -9,7 +9,6 @@ public record CampeonatoUpdate(
         String local,
         String cidade,
         String estado,
-        Long federacaoId,
-        boolean ativo
+        Long federacaoId
 ) {
 }
