@@ -28,8 +28,9 @@ public class Campeonato {
     private String estado;
 
     @ManyToOne
+    @JoinColumn(name = "federacao_id")
     private Federacao federacao;
-    private boolean ativo;
+    private Boolean ativo;
 
     public Campeonato(CampeonatoRequest dados) {
         this.nome = dados.nome();
@@ -43,14 +44,14 @@ public class Campeonato {
     }
 
     public void atualizar(CampeonatoUpdate dados) {
-        this.nome = dados.nome();
-        this.descricao = dados.descricao();
-        this.dataInicio = dados.dataInicio();
-        this.dataFim = dados.dataFim();
-        this.local = dados.local();
-        this.cidade = dados.cidade();
-        this.estado = dados.estado();
-        this.ativo = dados.ativo();
+        if (dados.nome() != null) this.nome = dados.nome();
+        if (dados.descricao() != null) this.descricao = dados.descricao();
+        if (dados.dataInicio() != null) this.dataInicio = dados.dataInicio();
+        if (dados.dataFim() != null) this.dataFim = dados.dataFim();
+        if (dados.local() != null) this.local = dados.local();
+        if (dados.cidade() != null) this.cidade = dados.cidade();
+        if (dados.estado() != null) this.estado = dados.estado();
+        if (dados.federacaoId() != null) this.federacao = new Federacao();
     }
 
 }
