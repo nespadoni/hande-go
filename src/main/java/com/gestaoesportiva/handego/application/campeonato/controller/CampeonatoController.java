@@ -1,10 +1,12 @@
 package com.gestaoesportiva.handego.application.campeonato.controller;
 
 import com.gestaoesportiva.handego.application.campeonato.dto.CampeonatoRequest;
+import com.gestaoesportiva.handego.application.campeonato.dto.CampeonatoResponse;
 import com.gestaoesportiva.handego.application.campeonato.dto.CampeonatoUpdate;
 import com.gestaoesportiva.handego.application.campeonato.service.CampeonatoService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,8 +30,8 @@ public class CampeonatoController {
 
     @GetMapping
     public ResponseEntity<?> findAll(Pageable paginacao) {
-        campeonatoService.findAll(paginacao);
-        return ResponseEntity.ok().body(paginacao);
+        Page<CampeonatoResponse> campeonato =  campeonatoService.findAll(paginacao);
+        return ResponseEntity.ok().body(campeonato);
     }
 
     @GetMapping("/{id}")
