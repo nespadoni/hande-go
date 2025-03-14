@@ -2,7 +2,7 @@ package com.gestaoesportiva.handego.application.usuario.entity;
 
 import com.gestaoesportiva.handego.application.usuario.dto.UsuarioRequest;
 import com.gestaoesportiva.handego.application.usuario.dto.UsuarioUpdate;
-import com.gestaoesportiva.handego.domain.enumeration.Role;
+import com.gestaoesportiva.handego.domain.enums.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
