@@ -2,7 +2,6 @@ package com.gestaoesportiva.handego.application.federacao.entity;
 
 import com.gestaoesportiva.handego.application.federacao.dto.FederacaoRequest;
 import com.gestaoesportiva.handego.application.federacao.dto.FederacaoUpdate;
-import com.gestaoesportiva.handego.domain.model.Regra;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,9 +27,6 @@ public class Federacao {
     private String telefone;
     private String cnpj;
     private String estado;
-
-    @OneToMany(mappedBy = "federacao", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Regra> regras = new ArrayList<>();
 
     private Boolean ativo;
 
