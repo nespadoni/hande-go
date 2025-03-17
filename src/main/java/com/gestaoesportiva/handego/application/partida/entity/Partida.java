@@ -4,11 +4,15 @@ import com.gestaoesportiva.handego.application.clube.entity.Clube;
 import com.gestaoesportiva.handego.domain.enums.StatusPartida;
 import com.gestaoesportiva.handego.domain.model.Rodada;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Entity
-@Table(name = "partidas")
+@Table(name = "partida")
 public class Partida {
 
     @Id
