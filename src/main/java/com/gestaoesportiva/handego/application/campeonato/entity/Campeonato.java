@@ -2,11 +2,15 @@ package com.gestaoesportiva.handego.application.campeonato.entity;
 
 import com.gestaoesportiva.handego.application.campeonato.dto.CampeonatoRequest;
 import com.gestaoesportiva.handego.application.campeonato.dto.CampeonatoUpdate;
+import com.gestaoesportiva.handego.application.clube.entity.Clube;
 import com.gestaoesportiva.handego.application.federacao.entity.Federacao;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -26,6 +30,14 @@ public class Campeonato {
     private String local;
     private String cidade;
     private String estado;
+
+    @ManyToMany
+    @JoinTable(
+            name = "campeonato_clube",
+            joinColumns = @JoinColumn(name = "campeonato_id"),
+            inverseJoinColumns = @JoinColumn(name = "clube_id")
+    )
+    private Set<Clube> clubes = new HashSet<>();
 
     @ManyToOne
     @JoinColumn(name = "federacao_id")
