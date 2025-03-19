@@ -9,7 +9,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -37,7 +39,7 @@ public class Campeonato {
             joinColumns = @JoinColumn(name = "campeonato_id"),
             inverseJoinColumns = @JoinColumn(name = "clube_id")
     )
-    private Set<Clube> clubes = new HashSet<>();
+    private List<Clube> clubes = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "federacao_id")
