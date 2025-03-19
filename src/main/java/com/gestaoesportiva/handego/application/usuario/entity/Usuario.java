@@ -23,8 +23,10 @@ public class Usuario {
     private String email;
     private String senha;
     private String telefone;
+
     @Enumerated(EnumType.STRING)
     private Role role;
+
     private String cpf;
     private String cidade;
     private String estado;
