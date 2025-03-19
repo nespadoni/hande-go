@@ -37,7 +37,6 @@ public class UsuarioService {
     public void update(Long id, UsuarioUpdate dados) {
         Usuario usuario = usuarioRepository.findById(id).orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
         usuario.atualizar(dados);
-        String nome = usuario.getNome();
         usuarioRepository.save(usuario);
     }
 
