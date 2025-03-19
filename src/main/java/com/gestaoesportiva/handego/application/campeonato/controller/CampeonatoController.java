@@ -5,6 +5,7 @@ import com.gestaoesportiva.handego.application.campeonato.dto.CampeonatoResponse
 import com.gestaoesportiva.handego.application.campeonato.dto.CampeonatoUpdate;
 import com.gestaoesportiva.handego.application.campeonato.dto.InscricaoClubeRequest;
 import com.gestaoesportiva.handego.application.campeonato.service.CampeonatoService;
+import com.gestaoesportiva.handego.application.clube.entity.Clube;
 import com.gestaoesportiva.handego.application.clube.repository.ClubeRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -18,11 +19,9 @@ import org.springframework.web.bind.annotation.*;
 public class CampeonatoController {
 
     private final CampeonatoService campeonatoService;
-    private final ClubeRepository clubeRepository;
 
-    public CampeonatoController(CampeonatoService campeonatoService, ClubeRepository clubeRepository) {
+    public CampeonatoController(CampeonatoService campeonatoService) {
         this.campeonatoService = campeonatoService;
-        this.clubeRepository = clubeRepository;
     }
 
     @PostMapping("/{id}/registrar-time")
