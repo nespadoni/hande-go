@@ -10,6 +10,7 @@ import com.gestaoesportiva.handego.application.clube.entity.Clube;
 import com.gestaoesportiva.handego.application.clube.repository.ClubeRepository;
 import com.gestaoesportiva.handego.application.federacao.entity.Federacao;
 import com.gestaoesportiva.handego.application.federacao.repository.FederacaoRepository;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -27,11 +28,11 @@ public class CampeonatoService {
         this.clubeRepository = clubeRepository;
     }
 
-    public String registrarTime(Long id, InscricaoClubeRequest dados) {
+    public String registrarTime(Long id, @NotNull InscricaoClubeRequest dados) {
         Campeonato campeonato = campeonatoRepository.findById(id).orElseThrow(() -> new RuntimeException("Campeonato não encontrado"));
         Clube clube = clubeRepository.findById(dados.clubeId()).orElseThrow(() -> new RuntimeException("Clube não encontrado"));
 
-        String nomeTime = clubeRepository.findById(dados.clubeId()).orElseThrow(() -> new RuntimeException("Clube não encontrado")).getNome();
+        String nomeTime = clube.getNome();
 
         campeonato.getClubes().add(clube);
         campeonatoRepository.save(campeonato);
